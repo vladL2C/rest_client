@@ -27,14 +27,25 @@ class SimpleRest
 	def menu_output(input)
 		case input 
 		when "1" 
-			puts "#{@response.code}"		
+			puts "#{@response.code}"
+
 		when "2"
 			puts "#{@response.cookies}"	
 		when "3" 
 			puts "#{@response.headers}"		
 		when "4"
 			puts "#{@response.body}"	
-		end 
+		end
+		puts "press 'y' to display the menu again!"
+		loop do  
+		response = gets.chomp  
+			if response == "y"
+				menu_option
+			else 
+				puts "dude just press y!"
+			end 
+		end 	
+			 	
 	end 
 
 end 
